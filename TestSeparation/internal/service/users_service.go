@@ -29,7 +29,7 @@ func (u *UsersService) Signup(ctx context.Context, phoneNumber string, displayNa
 		return entity.User{}, ErrInValidInput
 	}
 
-	_, err := u.usersRepository.ByField(ctx, "PhoneNumber", phoneNumber)
+	_, err := u.usersRepository.ByField(ctx, "phone_number", phoneNumber)
 
 	if err == nil {
 		return entity.User{}, ErrUserAlreadyExists

@@ -35,7 +35,7 @@ func TestUserService_Signup_UserExists(t *testing.T) {
 
 	usersRepository := &mocks.UsersRepository{}
 
-	usersRepository.On("ByField", mock.Anything, "PhoneNumber", "09211231231").
+	usersRepository.On("ByField", mock.Anything, "phone_number", "09211231231").
 		Return(entity.User{}, nil).Once()
 
 	service := NewUsersService(usersRepository)
